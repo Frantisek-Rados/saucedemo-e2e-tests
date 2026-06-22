@@ -1,12 +1,21 @@
 from playwright.sync_api import sync_playwright
-from pages.login_page import LoginPage
+from pages.login_page import login_page
 
 def test_login():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
+<<<<<<< HEAD
         page = browser.new_page()
         login_page = LoginPage(page)
         login_page.go_to()
         login_page.login("standard_user", "secret_sauce")
         assert page.url == "https://www.saucedemo.com/inventory.html"
         browser.close()
+=======
+        page = browser.new.page()
+        login_page = login_page(page)
+        login_page.go_to()
+        login_page.login("standart_user", "secret_sauce")
+        assert page.url == "https://www.saucedemo.com/invertory.html"
+        browser.close()
+>>>>>>> 0c2f889524e78c50a143bee37a9593a0d1e6485e
